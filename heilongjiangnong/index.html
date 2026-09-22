@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黑龙江农业工程学院官方网站，提供学校概况、学科建设、招生就业、校园文化及最新动态信息。">
+    <meta name="keywords" content="黑龙江农业工程学院, 黑农工, 高校招生, 招生网, 大学生活, 黑龙江高校">
+    <title>黑龙江农业工程学院-学校概况、招生就业与校园文化</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2E7D32; /* 农业绿 */
+            --primary-dark: #1B5E20;
+            --accent-color: #F9A825; /* 收获黄 */
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #F5F7FA;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .header-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/agri_campus/1920/1080.jpg') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-main);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(249, 168, 37, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 168, 37, 0.6);
+        }
+
+        /* 核心数据 */
+        .stats-bar {
+            background-color: var(--white);
+            padding: 40px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* 主体内容区 */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        /* 新闻动态网格 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-img {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .news-card:hover .news-img img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .news-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .news-link {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .news-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .news-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* 专题栏目 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .feature-col {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-list {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .feature-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 招生与联系方式 */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-card h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+        }
+
+        .contact-info-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-list svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            fill: currentColor;
+            opacity: 0.8;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: var(--text-main);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #FBC02D;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 22h20L12 2zm0 3.5L18.5 19H5.5L12 5.5zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+                </svg>
+                黑龙江农业工程学院 <span>Heilongjiang AIE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">学校概况</a></li>
+                    <li><a href="#">招生就业</a></li>
+                    <li><a href="#">人才培养</a></li>
+                    <li><a href="#">科学研究</a></li>
+                    <li><a href="#">校园生活</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">招生咨询</a>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>立足龙江 服务农业 培养应用型人才</h1>
+            <p>黑龙江农业工程学院致力于建设特色鲜明、国内知名的应用型本科高校，为区域经济社会发展贡献力量。</p>
+            <a href="#" class="hero-btn">探索学校详情</a>
+        </div>
+    </section>
+
+    <!-- 核心数据 -->
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>本科专业</p>
+            </div>
+            <div class="stat-item">
+                <h3>1.5万</h3>
+                <p>在校生规模</p>
+            </div>
+            <div class="stat-item">
+                <h3>600+</h3>
+                <p>教职工队伍</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>就业率</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <main class="container">
+        
+        <!-- 新闻动态 -->
+        <section class="news-section">
+            <div class="section-title">
+                <h2>新闻动态</h2>
+                <p>关注学校最新发展、学术交流与校园活动</p>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/agri_news1/400/300.jpg" alt="学校新闻图片">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">校园要闻</span>
+                        <h3 class="news-title">我校召开2024年教学工作审核评估动员大会</h3>
+                        <p class="news-desc">为进一步提升教学质量，明确审核评估工作目标，学校于近日召开全员动员大会，全面部署迎评促建工作。</p>
+                        <a href="#" class="news-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/agri_news2/400/300.jpg" alt="学术交流图片">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">学术科研</span>
+                        <h3 class="news-title">农业工程学院与多家企业签署产学研合作协议</h3>
+                        <p class="news-desc">为进一步推动科研成果转化，深化产教融合，学校在哈尔滨举办了校企合作签约仪式。</p>
+                        <a href="#" class="news-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/agri_news3/400/300.jpg" alt="学生活动图片">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">校园文化</span>
+                        <h3 class="news-title">第五届校园科技文化节圆满落幕</h3>
+                        <p class="news-desc">本届科技文化节历时一个月，涵盖了机器人竞赛、农业科技展、创意设计大赛等多个板块。</p>
+                        <a href="#" class="news-link">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 特色栏目 -->
+        <section class="features">
+            <div class="feature-col">
+                <h2>学科建设</h2>
+                <p style="color:var(--text-secondary); margin-bottom: 20px;">构建以工为主、农工结合、多学科协调发展的学科体系。</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">1</div>
+                        <div class="feature-text">
+                            <h4>重点建设专业</h4>
+                            <p>机械设计制造及其自动化、土木工程等传统优势专业持续深化内涵建设。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">2</div>
+                        <div class="feature-text">
+                            <h4>新兴交叉学科</h4>
+                            <p>积极推进人工智能、大数据等前沿技术与传统农业、工程领域的融合。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">3</div>
+                        <div class="feature-text">
+                            <h4>实践教学平台</h4>
+                            <p>建立完善的校内外实习实训基地，确保学生具备扎实的工程实践能力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-col">
+                <h2>招生就业</h2>
+                <p style="color:var(--text-secondary); margin-bottom: 20px;">畅通升学与就业渠道，助力学子成就精彩人生。</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">1</div>
+                        <div class="feature-text">
+                            <h4>多元升学通道</h4>
+                            <p>为优秀学生提供专升本、考研辅导及出国交流机会。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">2</div>
+                        <div class="feature-text">
+                            <h4>精准就业指导</h4>
+                            <p>开展职业生涯规划课程，举办大型双选会，提升毕业生就业竞争力。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">3</div>
+                        <div class="feature-text">
+                            <h4>校友资源网络</h4>
+                            <p>遍布全国各地的校友网络为学生提供实习推荐和就业支持。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section class="split-section">
+            <div>
+                <h2 style="margin-bottom: 20px; font-size: 28px;">联系我们</h2>
+                <p style="margin-bottom: 30px; color: var(--text-secondary);">
+                    欢迎访问黑龙江农业工程学院。如果您对招生政策、办学特色或校园环境有任何疑问，欢迎通过以下方式与我们联系。
+                </p>
+                <div style="background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eee;">
+                    <h3 style="margin-bottom: 20px;">在线留言</h3>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('感谢您的留言，我们会尽快与您联系。');">
+                        <input type="text" placeholder="您的姓名" required>
+                        <input type="email" placeholder="电子邮箱" required>
+                        <textarea rows="4" placeholder="请输入您的留言内容..." required></textarea>
+                        <button type="submit">提交留言</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>联系方式</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>黑龙江省哈尔滨市双城区周家街道学府路4号</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>info@haie.edu.cn</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>0451-5686XXXX</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>黑龙江农业工程学院</h4>
+                    <p>学校坚持“立足龙江、服务农业、面向基层、应用为本”的办学定位，致力于培养高素质应用型人才。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">学校概况</a></li>
+                        <li><a href="#">机构设置</a></li>
+                        <li><a href="#">招生网</a></li>
+                        <li><a href="#">就业网</a></li>
+                        <li><a href="#">图书馆</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>公共服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">一卡通服务</a></li>
+                        <li><a href="#">校园网登录</a></li>
+                        <li><a href="#">OA办公系统</a></li>
+                        <li><a href="#">信息公开</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>扫描二维码关注官方微信公众号，获取更多校园资讯。</p>
+                    <div style="margin-top: 15px; width: 150px; height: 150px; background: #333; display: flex; align-items: center; justify-content: center; color: #666; font-size: 12px;">
+                        二维码占位
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 黑龙江农业工程学院 版权所有 | 黑ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
