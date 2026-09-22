@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="浙中装饰网是浙中地区专业的装饰装修服务平台，提供装修公司推荐、装修案例展示、装修预算报价及本地家装建材资讯，助您打造理想家居。">
+    <meta name="keywords" content="浙中装饰网,金华装修,义乌装修,装修公司,装修案例,装修报价,家装">
+    <title>浙中装饰网-浙中地区装修公司推荐与装修案例展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f39c12;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .top-bar {
+            background-color: #f4f4f4;
+            font-size: 12px;
+            color: var(--text-light);
+            padding: 5px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-bar a {
+            margin-left: 15px;
+        }
+
+        .main-header {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Features */
+        .features {
+            padding: 40px 0;
+            background-color: var(--bg-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        /* Project Gallery */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 15px;
+        }
+
+        .project-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .project-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .company-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-list li:last-child {
+            border-bottom: none;
+        }
+
+        .company-name {
+            font-weight: 500;
+            display: block;
+        }
+
+        .company-tag {
+            font-size: 12px;
+            background: #eef5ff;
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .pricing-table th, .pricing-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-table th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+        }
+
+        .pricing-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* News List */
+        .news-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+
+        .news-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .news-date {
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .header-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>欢迎访问浙中装饰网，提供专业的装修咨询与本地服务。</div>
+            <div>
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">商家入驻</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="#" class="logo">
+                    浙中装饰网
+                    <span>专注本地家装服务</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">装修公司</a>
+                    <a href="#">装修案例</a>
+                    <a href="#">装修报价</a>
+                    <a href="#">建材商城</a>
+                    <a href="#">装修资讯</a>
+                </nav>
+                <div class="header-cta">
+                    <a href="#" class="btn btn-outline">发布需求</a>
+                    <a href="#" class="btn btn-primary">免费报价</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>浙中装修首选平台</h1>
+            <p>海量真实装修案例，本地优质装修公司推荐，透明装修报价，让您的家装更省心、更省钱。</p>
+            <div class="search-box">
+                <input type="text" placeholder="输入小区名称或装修需求...">
+                <button>立即咨询</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">🏢</span>
+                    <h3>本地认证</h3>
+                    <p>严格审核本地注册装修公司，确保服务真实性。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎨</span>
+                    <h3>海量案例</h3>
+                    <p>覆盖现代、中式、欧式等多种风格，实景拍摄。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💰</span>
+                    <h3>透明报价</h3>
+                    <p>拒绝隐形消费，装修预算清单一目了然。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛠️</span>
+                    <h3>全程监理</h3>
+                    <p>专业监理团队，保障工程质量与施工进度。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-layout">
+        
+        <!-- Left Column -->
+        <main>
+            <!-- Hot Projects -->
+            <section>
+                <div class="section-title">
+                    <h2>热门装修案例</h2>
+                    <a href="#">查看更多 &gt;</a>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="https://picsum.photos/seed/decor1/400/300" alt="现代简约客厅装修案例" class="project-img">
+                        <div class="project-info">
+                            <h3>金东区·现代简约三居室</h3>
+                            <div class="project-meta">
+                                <span>120㎡ | 现代简约</span>
+                                <span>浏览 2.3w</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://picsum.photos/seed/decor2/400/300" alt="北欧风格卧室装修案例" class="project-img">
+                        <div class="project-info">
+                            <h3>义乌·北欧风两居室</h3>
+                            <div class="project-meta">
+                                <span>89㎡ | 北欧风格</span>
+                                <span>浏览 1.8w</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://picsum.photos/seed/decor3/400/300" alt="中式风格餐厅装修案例" class="project-img">
+                        <div class="project-info">
+                            <h3>兰溪·新中式别墅设计</h3>
+                            <div class="project-meta">
+                                <span>280㎡ | 新中式</span>
+                                <span>浏览 3.1w</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://picsum.photos/seed/decor4/400/300" alt="日式风格厨房装修案例" class="project-img">
+                        <div class="project-info">
+                            <h3>永康·日式原木风公寓</h3>
+                            <div class="project-meta">
+                                <span>65㎡ | 日式风格</span>
+                                <span>浏览 9500</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Info Column -->
+            <section style="margin-top: 50px;">
+                <div class="section-title">
+                    <h2>装修知识指南</h2>
+                    <a href="#">更多文章 &gt;</a>
+                </div>
+                <ul class="news-list">
+                    <li>
+                        <a href="#">
+                            <span>2024年浙中地区装修材料价格趋势分析</span>
+                            <span class="news-date">10-24</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>装修避坑指南：如何识别隐形增项费用</span>
+                            <span class="news-date">10-22</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>小户型装修技巧：空间利用率提升方案</span>
+                            <span class="news-date">10-18</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>浙中地区环保建材选购与检测标准</span>
+                            <span class="news-date">10-15</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>装修合同签订注意事项与法律风险防范</span>
+                            <span class="news-date">10-10</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside>
+            <!-- Top Companies -->
+            <div class="sidebar-widget">
+                <h3>浙中优选装修公司</h3>
+                <ul class="company-list">
+                    <li>
+                        <a href="#">
+                            <span class="company-name">金华市易居装饰工程有限公司</span>
+                            <span class="company-tag">5A</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="company-name">义乌市宏图装饰设计中心</span>
+                            <span class="company-tag">4A</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="company-name">兰溪市雅居装饰设计部</span>
+                            <span class="company-tag">3A</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="company-name">永康市金斧头家装公司</span>
+                            <span class="company-tag">3A</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="company-name">东阳市光影装饰设计</span>
+                            <span class="company-tag">2A</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="sidebar-widget">
+                <h3>装修预算参考</h3>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>户型面积</th>
+                            <th>简装报价</th>
+                            <th>精装报价</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>60-90㎡</td>
+                            <td>800-1000元/㎡</td>
+                            <td>1200-1500元/㎡</td>
+                        </tr>
+                        <tr>
+                            <td>90-120㎡</td>
+                            <td>700-900元/㎡</td>
+                            <td>1100-1400元/㎡</td>
+                        </tr>
+                        <tr>
+                            <td>120-150㎡</td>
+                            <td>650-850元/㎡</td>
+                            <td>1000-1300元/㎡</td>
+                        </tr>
+                        <tr>
+                            <td>150㎡以上</td>
+                            <td>600-800元/㎡</td>
+                            <td>900-1200元/㎡</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 12px; color: #999; margin-top: 10px; text-align: center;">* 以上为浙中地区市场参考价，具体以实际报价为准</p>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="sidebar-widget" style="background-color: var(--primary-color); color: white; border: none;">
+                <h3 style="color: white; border-color: rgba(255,255,255,0.3);">免费获取报价</h3>
+                <p style="margin: 15px 0; font-size: 14px; opacity: 0.9;">填写您的房屋信息，3家本地优质公司免费为您报价。</p>
+                <button class="btn" style="background: white; color: var(--primary-color); width: 100%;">立即测算</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">服务宗旨</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>装修服务</h4>
+                    <ul>
+                        <li><a href="#">家庭装修</a></li>
+                        <li><a href="#">办公室装修</a></li>
+                        <li><a href="#">商铺装修</a></li>
+                        <li><a href="#">旧房翻新</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">装修流程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">投诉建议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：0579-8888 8888</li>
+                        <li>邮箱：service@zjzsw.com</li>
+                        <li>地址：浙江省金华市婺城区八一南街888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 浙中装饰网 版权所有 | 浙ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
