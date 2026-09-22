@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星巴克冰块含细菌-食品安全调查与饮用指南</title>
+    <meta name="description" content="关于星巴克冰块含细菌事件的最新调查报告、卫生风险分析及消费者饮用安全建议。了解冰块制作过程中的潜在隐患，如何判断饮品卫生状况。">
+    <meta name="keywords" content="星巴克冰块含细菌,星巴克卫生,饮品安全,食品安全调查,冰块制作工艺">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00704A;
+            --secondary-color: #006B3F;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --accent-red: #D32F2F;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #FFF3E0;
+            color: #EF6C00;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 24px;
+        }
+
+        .article-body h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .article-body p {
+            margin-bottom: 16px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #FFF8E1;
+            border-left: 4px solid #FFC107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 1rem;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .checklist-item::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            display: none; /* Simple JS toggle logic could be added here, keeping static for now */
+            margin-top: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: "+";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none; /* Hide nav on mobile for simplicity */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+                <span>食品安全科普网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">事件追踪</a></li>
+                    <li><a href="#">饮水安全</a></li>
+                    <li><a href="#">餐厅卫生</a></li>
+                    <li><a href="#">消费者指南</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">联系客服</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="status-badge">最新调查报告</div>
+            <div class="hero-content">
+                <h1>星巴克冰块含细菌：深度解析风险与应对措施</h1>
+                <p>针对近期关于星巴克冰块卫生状况的讨论，本文将从微生物学角度分析冰块制作工艺中的潜在风险，并提供消费者实用的安全饮用建议。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="content-area">
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/ice/800/400" alt="冰块制作过程示意图" class="article-image">
+                    <div class="article-body">
+                        <h2>冰块制作过程中的卫生隐患</h2>
+                        <p>根据食品安全标准，制冰机若未定期清洗消毒，极易成为细菌滋生的温床。星巴克冰块含细菌的报道主要集中在以下几个方面：</p>
+                        
+                        <div class="highlight-box">
+                            <h3>核心风险点</h3>
+                            <p>制冰机内部的水路系统、储冰槽以及出冰口是微生物污染的主要来源。若清洗流程不规范，残留的有机物会滋养细菌，导致冰块微生物超标。</p>
+                        </div>
+
+                        <p><strong>1. 交叉污染：</strong> 在制作过程中，如果制冰机与接触冰块的器具（如勺子、杯壁）未经过严格消毒，细菌可能通过直接接触传播。</p>
+                        <p><strong>2. 环境滋生：</strong> 冰块在储存和运输过程中，若处于室温环境或温度波动大，会加速细菌繁殖。</p>
+                        <p><strong>3. 消毒剂残留：</strong> 如果使用含氯消毒剂清洗机器，若未彻底冲洗干净，消毒剂残留可能随冰块进入人体。</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-body">
+                        <h2>星巴克官方回应与行业规范</h2>
+                        <p>针对外界关注的卫生问题，相关餐饮连锁企业通常会执行严格的内部卫生标准。标准的制冰机维护周期通常包括每日清洁和每周深度消毒。</p>
+                        <p>虽然个别门店可能出现管理疏漏，但这并不代表整个行业的卫生状况堪忧。消费者在选择饮品时，应关注门店的整体卫生环境，而不仅仅是单一环节。</p>
+                    </div>
+                </article>
+
+                <section class="faq-section">
+                    <div class="section-title">常见问题解答 (FAQ)</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">喝含有细菌的冰块饮料会生病吗？</div>
+                        <div class="faq-answer">对于健康成年人，偶尔饮用少量细菌超标的饮料通常不会引起明显不适，因为人体有强大的免疫系统。但对于免疫力低下的人群，可能会增加肠胃不适的风险。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断餐厅的冰块是否卫生？</div>
+                        <div class="faq-answer">可以通过观察冰块的透明度、闻气味，以及观察制冰机周围是否有积水或污渍。透明的冰块通常意味着制作过程较规范。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">自己在家制冰如何避免细菌？</div>
+                        <div class="faq-answer">使用纯净水，定期清洗制冰机，保持储冰槽干燥，并避免用脏手触碰冰格。</div>
+                    </div>
+                </section>
+            </div>
+
+            <aside>
+                <div class="sidebar-card">
+                    <h3>饮用安全指南</h3>
+                    <div class="checklist-item">检查饮品是否有异味</div>
+                    <div class="checklist-item">观察制冰机外观是否清洁</div>
+                    <div class="checklist-item">避免饮用温度过低的冰饮</div>
+                    <div class="checklist-item">选择卫生评级高的门店</div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>相关资讯</h3>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li style="margin-bottom: 12px;"><a href="#">夏季饮品卫生注意事项</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#">自制冰沙的健康风险</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#">如何正确清洗制冰机</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                    专注于食品安全科普与消费者权益保护，提供客观、专业的饮食安全知识。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">食品安全标准</a></li>
+                    <li><a href="#">餐厅评分查询</a></li>
+                    <li><a href="#">消费者投诉</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">support@foodsafe-demo.com</a></li>
+                    <li><a href="#">400-123-4567</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 食品安全科普网. 保留所有权利. 本页面内容仅供参考，不构成医疗建议。
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
