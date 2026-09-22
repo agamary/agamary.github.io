@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速漫画-高清无弹窗全本在线阅读平台</title>
+    <meta name="description" content="极速漫画为您提供最新最热的韩漫、日漫、国漫在线阅读服务。高清无弹窗，更新速度快，全本免费，极致流畅的阅读体验。">
+    <meta name="keywords" content="极速漫画,在线漫画,韩漫,日漫,免费漫画,全本漫画,极速阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 var(--spacing-lg);
+            position: relative;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: block;
+            }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 2px solid #e1e1e1;
+            border-radius: 20px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--secondary-color);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: block;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.1rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layout */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .manga-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        .manga-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .manga-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .read-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-weight: 700;
+            transform: scale(0.9);
+            transition: transform 0.2s;
+        }
+
+        .manga-card:hover .read-btn {
+            transform: scale(1);
+        }
+
+        .card-info {
+            padding: var(--spacing-md);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #eee;
+            color: var(--text-sub);
+        }
+
+        .badge.hot {
+            background: #ffeaa7;
+            color: #d35400;
+        }
+
+        .badge.new {
+            background: #55efc4;
+            color: #00b894;
+        }
+
+        /* Feature List */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: var(--spacing-lg) 0;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: var(--spacing-lg);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                极速<span>漫画</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索漫画书名、作者...">
+            </div>
+
+            <div class="user-actions">
+                <nav class="nav-links" id="desktop-nav">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">热门榜单</a>
+                    <a href="#">分类浏览</a>
+                    <a href="#">我的书架</a>
+                </nav>
+                <button class="menu-toggle" aria-label="菜单">☰</button>
+                <a href="#" class="btn btn-primary">登录 / 注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-tag">极速体验 · 全本免费</span>
+                <h1>发现精彩世界<br>畅读海量漫画</h1>
+                <p>极速漫画汇集全球最新韩漫、日漫与国漫作品，高清无弹窗，智能翻页，为您带来极致流畅的阅读享受。</p>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn btn-primary">开始阅读</a>
+                    <a href="#" class="btn btn-outline">浏览分类</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- 使用 Picsum 生成随机封面图作为占位 -->
+                <img src="https://picsum.photos/seed/manga_hero/500/350" alt="推荐漫画展示" width="500" height="350">
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- 热门推荐 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">今日热门</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="manga-grid">
+                <!-- 卡片 1 -->
+                <article class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga1/300/450" alt="漫画封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">绝世高手在都市</h3>
+                        <div class="card-meta">
+                            <span class="badge hot">热门</span>
+                            <span>已更新 120 话</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga2/300/450" alt="漫画封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">重生之财源滚滚</h3>
+                        <div class="card-meta">
+                            <span class="badge new">新作</span>
+                            <span>已更新 45 话</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga3/300/450" alt="漫画封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">星际争霸：觉醒</h3>
+                        <div class="card-meta">
+                            <span class="badge">科幻</span>
+                            <span>已更新 88 话</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 4 -->
+                <article class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga4/300/450" alt="漫画封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">恶魔管家别过来</h3>
+                        <div class="card-meta">
+                            <span class="badge hot">热门</span>
+                            <span>已更新 210 话</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 平台特色 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">为什么选择极速漫画</h2>
+            </div>
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <h3>极速加载</h3>
+                    <p>采用智能CDN节点，图片自动压缩，确保在任何网络环境下都能秒开漫画，告别等待。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🚫</span>
+                    <h3>纯净无广</h3>
+                    <p>全站无弹窗广告，无强制跳转，专注于阅读本身，为您打造沉浸式阅读体验。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📚</span>
+                    <h3>全本收录</h3>
+                    <p>独家收录大量完结作品，支持离线下载，随时随地想看就看，不错过任何精彩剧情。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类导航 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">热血战斗</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">恋爱校园</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">都市异能</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">悬疑推理</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">仙侠玄幻</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">历史穿越</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">萌宠治愈</a>
+                <a href="#" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.9rem;">恐怖惊悚</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h2>极速漫画</h2>
+                <p>致力于为漫画爱好者提供最优质、最流畅的在线阅读服务。汇聚全球好漫，点亮你的阅读时光。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">韩漫专区</a></li>
+                    <li><a href="#">日漫专区</a></li>
+                    <li><a href="#">国漫专区</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">加入粉丝群</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 极速漫画 版权所有. 本站内容仅供学习交流使用，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
