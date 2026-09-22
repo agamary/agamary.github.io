@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="乐观心态 - 探索积极心理学的力量，获取情绪调节方法、抗压技巧与生活哲学。在这里发现乐观如何改变你的思维方式，提升幸福感与应对挑战的能力。">
+    <meta name="keywords" content="乐观, 积极心理学, 心理健康, 情绪调节, 生活哲学">
+    <title>乐观 - 积极心理学与生活哲学指南</title>
+    <style>
+        :root {
+            --primary-color: #2E7D32; /* 橄榄绿，代表生机与希望 */
+            --primary-light: #E8F5E9;
+            --accent-color: #FF6F00; /* 琥珀色，代表活力与温暖 */
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #FFF8E1 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #1B5E20;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Core Content Section */
+        .content-section {
+            background-color: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .article-img {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 1.5rem;
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-section {
+            background-color: #FFF3E0;
+            padding: 3rem;
+            border-radius: var(--radius);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .quiz-content h2 {
+            color: #E65100;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-content p {
+            color: #5D4037;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(255, 111, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+        .quiz-btn:hover {
+            background-color: #EF6C00;
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        details {
+            background: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1.25rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-main);
+            list-style: none;
+            position: relative;
+            padding-right: 2.5rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-secondary);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #37474F;
+            color: #78909C;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                display: none; /* Simple mobile hiding for this static demo */
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">☀️</span>
+                乐观<span>指南</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#philosophy" class="active">心态哲学</a></li>
+                    <li><a href="#practices">实践方法</a></li>
+                    <li><a href="#articles">深度文章</a></li>
+                    <li><a href="#community">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>拥抱乐观，重塑生活的积极力量</h1>
+                <p>乐观不仅仅是面对困难时的积极态度，更是一种科学可习得的心理韧性。探索如何通过认知重构，将挑战转化为成长的契机。</p>
+                <a href="#practices" class="hero-btn">开始提升心态</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container">
+            <div class="features">
+                <article class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>认知重构</h3>
+                    <p>学习识别并挑战消极的思维模式，用更客观、建设性的视角看待问题。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">💪</span>
+                    <h3>抗压韧性</h3>
+                    <p>建立心理缓冲区，在逆境中保持稳定，快速恢复并寻找解决方案。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">❤️</span>
+                    <h3>幸福感提升</h3>
+                    <p>通过积极情绪的积累，改善人际关系，提升整体的生活满意度。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Core Philosophy -->
+        <section id="philosophy" class="container">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>什么是真正的乐观？</h2>
+                    <p>超越简单的“盲目快乐”，理解乐观背后的心理学机制。</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <p style="margin-bottom: 1rem;">乐观并非无视现实中的痛苦，而是相信即使面对困难，未来依然存在积极的可能性。心理学家马丁·塞利格曼提出的“解释风格”理论指出，乐观者倾向于将失败归因于外部的、暂时的、具体的因素，而悲观者则倾向于归因于内部的、永久的、普遍的因素。</p>
+                        <p>掌握这种思维方式，能让我们在面对职场压力或生活变故时，不至于陷入瘫痪状态。</p>
+                    </div>
+                    <div style="background: #E8F5E9; padding: 2rem; border-radius: var(--radius); text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌱</div>
+                        <h3 style="color: var(--primary-color);">成长型思维</h3>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">相信能力可以通过努力提升，视挫折为学习的机会。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section id="articles" class="container">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>精选阅读：乐观与生活</h2>
+                    <p>实用的建议与深刻的洞察，助你建立强大的内心世界。</p>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/optimism1/400/250" alt="晨练与乐观" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">生活方式</span>
+                            <h3 class="article-title">晨间习惯：如何用5分钟开启一天的积极能量</h3>
+                            <p class="article-excerpt">通过简单的身体活动与正向自我暗示，启动大脑的奖励机制。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/optimism2/400/250" alt="职场应对" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">职场心理</span>
+                            <h3 class="article-title">面对职场挫折：乐观者的应对策略</h3>
+                            <p class="article-excerpt">当项目失败时，如何避免自我攻击，转而分析可改进的细节。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/optimism3/400/250" alt="人际关系" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">人际关系</span>
+                            <h3 class="article-title">积极倾听：在沟通中传递乐观情绪</h3>
+                            <p class="article-excerpt">通过语言技巧，成为身边人的情绪稳定剂和能量加油站。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="practices" class="container">
+            <div class="quiz-section">
+                <div class="quiz-content">
+                    <h2>你的乐观指数有多高？</h2>
+                    <p>评估一下当前的心态状态，并获取个性化的改善建议。</p>
+                    <button class="quiz-btn" onclick="startQuiz()">开始心理测评</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container faq-container">
+            <div class="section-header" style="text-align: center; border: none; padding: 0;">
+                <h2>常见问题解答</h2>
+            </div>
+            <details>
+                <summary>乐观是否意味着要假装一切都很好？</summary>
+                <div class="faq-answer">
+                    不是的。真正的乐观是诚实地面对当下的情绪，但选择相信问题是可以被解决的。它不是压抑负面情绪，而是不让负面情绪主导你的行动。
+                </div>
+            </details>
+            <details>
+                <summary>天生悲观的人可以变得乐观吗？</summary>
+                <div class="faq-answer">
+                    是的，根据心理学研究，乐观是一种可以学习和训练的认知技能。通过练习“归因训练”和“感恩日记”，悲观者完全可以逐步建立更积极的解释风格。
+                </div>
+            </details>
+            <details>
+                <summary>过度乐观会有什么负面影响吗？</summary>
+                <div class="faq-answer">
+                    有可能。如果缺乏现实基础的过度乐观（盲目乐观），可能会导致忽视风险、准备不足或在遭遇挫折时产生更强烈的失落感。关键在于“基于现实的乐观”。
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+                        <span style="font-size: 1.5rem;">☀️</span>
+                        乐观<span>指南</span>
+                    </div>
+                    <p style="color: #b0bec5; font-size: 0.9rem; max-width: 400px;">
+                        致力于普及积极心理学知识，帮助每个人发现自身潜能，建立更加坚韧、充实的生活方式。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">心理学基础</a></li>
+                        <li><a href="#">情绪管理</a></li>
+                        <li><a href="#">压力缓解</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">阅读列表</a></li>
+                        <li><a href="#">冥想引导</a></li>
+                        <li><a href="#">专家咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">我们的使命</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 乐观指南. All Rights Reserved. 本站内容仅供学习与参考，不构成医疗建议。
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        function startQuiz() {
+            // 简单的交互反馈
+            const btn = document.querySelector('.quiz-btn');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "正在加载测评...";
+            btn.style.opacity = "0.7";
+            
+            setTimeout(() => {
+                // 模拟跳转或显示结果
+                alert("这是一个静态演示页面。在实际应用中，这里将跳转至完整的心理测评问卷。");
+                btn.innerText = originalText;
+                btn.style.opacity = "1";
+            }, 800);
+        }
+    </script>
+</body>
+</html>
