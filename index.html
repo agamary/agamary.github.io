@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="挠脚心动漫专题站，提供各类包含挠脚心元素的动漫作品推荐、角色分析及阅读指南。探索二次元中独特的肢体互动与趣味剧情。">
+    <meta name="keywords" content="挠脚心动漫,动漫推荐,二次元互动,动漫角色分析">
+    <title>挠脚心动漫-趣味互动与特色作品推荐指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --secondary-color: #ff4757;
+            --accent-color: #2ed573;
+            --dark-bg: #1e272e;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-unit: 1rem;
+            --border-radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: #f1f2f6;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2f3542 0%, #1e272e 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,129,0.1) 0%, transparent 60%);
+            animation: pulse 10s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #a4b0be;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--dark-bg);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Featured Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #dfe4ea;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: rgba(255, 107, 129, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-bg);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f1f2f6;
+            padding-top: 1rem;
+        }
+
+        /* Category List */
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cat-item {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.3s;
+        }
+
+        .cat-item:hover {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.2rem;
+            background-color: #f8f9fa;
+            color: var(--text-light);
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #a4b0be;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            <span>挠脚心动漫</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#recommend">推荐作品</a></li>
+                <li><a href="#categories">分类浏览</a></li>
+                <li><a href="#guide">阅读指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索二次元独特的肢体互动</h1>
+            <p>汇集各类包含挠脚心元素的动漫作品推荐，分析角色设定与剧情走向，为您寻找高质量、有深度的互动剧情提供参考。</p>
+            <a href="#recommend" class="btn btn-primary">开始探索</a>
+        </div>
+    </section>
+
+    <!-- Featured Recommendations -->
+    <section id="recommend" class="container">
+        <div class="section-title">
+            <h2>热门推荐作品</h2>
+        </div>
+        <div class="grid-layout">
+            <!-- Card 1 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/anime1/400/300" alt="动漫封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">喜剧</span>
+                    <h3 class="card-title">校园日常：快乐时刻</h3>
+                    <p class="card-desc">讲述一群性格各异的学生在放学后的社团活动中发生的轻松趣事，包含多次温馨的肢体互动情节。</p>
+                    <div class="card-meta">
+                        <span>已完结</span>
+                        <span>评分 9.2</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/anime2/400/300" alt="动漫封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">冒险</span>
+                    <h3 class="card-title">异界冒险：羁绊加深</h3>
+                    <p class="card-desc">在充满未知的异世界中，伙伴们为了生存互相扶持。故事中展现了角色间独特的信任与互动方式。</p>
+                    <div class="card-meta">
+                        <span>连载中</span>
+                        <span>评分 8.9</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/anime3/400/300" alt="动漫封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">生活</span>
+                    <h3 class="card-title">同居生活：甜蜜日常</h3>
+                    <p class="card-desc">轻松的生活流作品，通过日常琐事展现人物性格。剧情细腻，互动自然，充满生活气息。</p>
+                    <div class="card-meta">
+                        <span>已完结</span>
+                        <span>评分 9.5</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/anime4/400/300" alt="动漫封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">悬疑</span>
+                    <h3 class="card-title">侦探事务所：秘密线索</h3>
+                    <p class="card-desc">在解谜过程中，侦探与助手之间不仅有工作上的默契，也有私下的轻松时刻，增加了角色的立体感。</p>
+                    <div class="card-meta">
+                        <span>已完结</span>
+                        <span>评分 8.7</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>作品分类</h2>
+            </div>
+            <div class="category-list">
+                <a href="#" class="cat-item">校园生活</a>
+                <a href="#" class="cat-item">恋爱喜剧</a>
+                <a href="#" class="cat-item">冒险奇幻</a>
+                <a href="#" class="cat-item">悬疑推理</a>
+                <a href="#" class="cat-item">日常治愈</a>
+                <a href="#" class="cat-item">特殊互动</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Guide -->
+    <section id="guide" class="container">
+        <div class="section-title">
+            <h2>阅读指南与选择建议</h2>
+        </div>
+        <div class="grid-layout" style="grid-template-columns: 1fr 1fr;">
+            <div class="feature-box">
+                <h3>如何寻找高质量作品</h3>
+                <p>在浏览相关作品时，建议优先关注制作方口碑、剧情深度以及角色的塑造。优秀的作品往往能将肢体互动自然融入剧情，而非单纯的猎奇。</p>
+            </div>
+            <div class="feature-box" style="border-left-color: var(--accent-color);">
+                <h3>注意内容分级</h3>
+                <p>部分作品可能包含特定题材内容，请根据自身喜好和年龄限制选择观看。支持正版渠道，享受更清晰的画质和更完整的剧情体验。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: #f1f2f6;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">这些作品适合所有观众吗？</div>
+                <div class="faq-answer">
+                    大部分推荐作品为全年龄向或青少年向，适合在公共场合观看。但部分特定题材可能包含成人元素，请查看作品的具体标签和简介。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">在哪里可以观看这些动漫？</div>
+                <div class="faq-answer">
+                    我们提供正版资源的导航链接，请支持正版平台。建议访问官方授权的流媒体网站或购买正版光盘，以获得最佳体验。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何判断一部动漫的剧情质量？</div>
+                <div class="faq-answer">
+                    除了关注评分，还可以查看评论区的详细反馈。优秀的剧情通常具有完整的世界观、合理的人物动机以及引人入胜的冲突设置。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">更新频率是怎样的？</div>
+                <div class="faq-answer">
+                    不同作品的更新频率不同。连载中的动画通常每周更新一集，而漫画则根据作者进度定期更新，建议关注相关平台的通知。
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p>致力于为二次元爱好者提供最全面、最准确的动漫作品推荐与资讯服务。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#recommend">推荐作品</a></li>
+                    <li><a href="#categories">分类列表</a></li>
+                    <li><a href="#guide">阅读指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>商务合作：contact@example.com</li>
+                    <li>内容反馈：feedback@example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 挠脚心动漫专题站. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
